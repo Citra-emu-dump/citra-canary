@@ -1,3 +1,16 @@
+| Pull Request | Commit | Title | Author | Merged? |
+|----|----|----|----|----|
+| [7372](https://github.com/citra-emu/citra//pull/7372) | [`5a9bb045d`](https://github.com/citra-emu/citra//pull/7372/files) | pica_types: Correctly restrict Float<M, E> precision | [vitor-k](https://github.com/vitor-k/) | Yes |
+| [7384](https://github.com/citra-emu/citra//pull/7384) | [`20ef8e47e`](https://github.com/citra-emu/citra//pull/7384/files) | host_shaders: Remove dependency on shaderSampledImageArrayDynamicIndexing | [GPUCode](https://github.com/GPUCode/) | Yes |
+| [7389](https://github.com/citra-emu/citra//pull/7389) | [`ccd7683f5`](https://github.com/citra-emu/citra//pull/7389/files) | build: Improve support for Windows cross-compilation. | [Steveice10](https://github.com/Steveice10/) | Yes |
+| [7395](https://github.com/citra-emu/citra//pull/7395) | [`0b7da941d`](https://github.com/citra-emu/citra//pull/7395/files) | qt: Display OpenGL renderer name and add Mesa override to support Windows OpenGLOn12. | [Steveice10](https://github.com/Steveice10/) | Yes |
+| [7398](https://github.com/citra-emu/citra//pull/7398) | [`9d0941f5a`](https://github.com/citra-emu/citra//pull/7398/files) | externals: Update dynarmic to 6.6.1, Update oaknut to 2.0.1 | [merryhime](https://github.com/merryhime/) | Yes |
+
+
+End of merge log. You can find the original README.md below the break.
+
+-----
+
 <h1 align="center">
   <br>
   <a href="https://citra-emu.org/"><img src="https://raw.githubusercontent.com/citra-emu/citra-assets/master/Main/citra_logo.svg" alt="Citra" width="200"></a>
