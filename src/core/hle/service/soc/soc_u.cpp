@@ -2229,7 +2229,18 @@ std::optional<SOC_U::InterfaceInfo> SOC_U::GetDefaultInterfaceInfo() {
     }
     closesocket(sock_fd);
 
-#ifdef _WIN32
+#if defined(ANDROID)
+    // Android does not expose interface info, try to make a guess from the information we have.
+    LOG_DEBUG(Service_SOC,
+              "Found interface: (addr: {}, netmask: 255.255.255.255, broadcast: 255.255.255.255)",
+              std::string(inet_ntoa(s_info.sin_addr)));
+
+    ret.address = s_info.sin_addr.s_addr;
+    ret.netmask = 0xFFFFFFFF;
+    ret.broadcast = 0xFFFFFFFF;
+    interface_found = true;
+    LOG_WARNING(Service_SOC, "Interface info is limited.");
+#elif defined(_WIN32)
     sock_fd = WSASocket(AF_INET, SOCK_DGRAM, 0, 0, 0, 0);
     if (sock_fd == SOCKET_ERROR) {
         return std::nullopt;
@@ -2256,22 +2267,12 @@ std::optional<SOC_U::InterfaceInfo> SOC_U::GetDefaultInterfaceInfo() {
             ret.broadcast =
                 ((sockaddr_in*)&(interface_list[i].iiBroadcastAddress))->sin_addr.s_addr;
             interface_found = true;
-            {
-                char address[16] = {0}, netmask[16] = {0}, broadcast[16] = {0};
-                std::strncpy(address,
-                             inet_ntoa(((sockaddr_in*)&(interface_list[i].iiAddress))->sin_addr),
-                             sizeof(address) - 1);
-                std::strncpy(netmask,
-                             inet_ntoa(((sockaddr_in*)&(interface_list[i].iiNetmask))->sin_addr),
-                             sizeof(netmask) - 1);
-                std::strncpy(
-                    broadcast,
-                    inet_ntoa(((sockaddr_in*)&(interface_list[i].iiBroadcastAddress))->sin_addr),
-                    sizeof(broadcast) - 1);
-
-                LOG_DEBUG(Service_SOC, "Found interface: (addr: {}, netmask: {}, broadcast: {})",
-                          address, netmask, broadcast);
-            }
+            LOG_DEBUG(
+                Service_SOC, "Found interface: (addr: {}, netmask: {}, broadcast: {})",
+                std::string(inet_ntoa(((sockaddr_in*)&(interface_list[i].iiAddress))->sin_addr)),
+                std::string(inet_ntoa(((sockaddr_in*)&(interface_list[i].iiNetmask))->sin_addr)),
+                std::string(
+                    inet_ntoa(((sockaddr_in*)&(interface_list[i].iiBroadcastAddress))->sin_addr)));
             break;
         }
     }
@@ -2292,17 +2293,10 @@ std::optional<SOC_U::InterfaceInfo> SOC_U::GetDefaultInterfaceInfo() {
                 ret.netmask = in_netmask->sin_addr.s_addr;
                 ret.broadcast = in_broadcast->sin_addr.s_addr;
                 interface_found = true;
-                {
-                    char address[16] = {0}, netmask[16] = {0}, broadcast[16] = {0};
-                    std::strncpy(address, inet_ntoa(in_address->sin_addr), sizeof(address) - 1);
-                    std::strncpy(netmask, inet_ntoa(in_netmask->sin_addr), sizeof(netmask) - 1);
-                    std::strncpy(broadcast, inet_ntoa(in_broadcast->sin_addr),
-                                 sizeof(broadcast) - 1);
-
-                    LOG_DEBUG(Service_SOC,
-                              "Found interface: (addr: {}, netmask: {}, broadcast: {})", address,
-                              netmask, broadcast);
-                }
+                LOG_DEBUG(Service_SOC, "Found interface: (addr: {}, netmask: {}, broadcast: {})",
+                          std::string(inet_ntoa(in_address->sin_addr)),
+                          std::string(inet_ntoa(in_netmask->sin_addr)),
+                          std::string(inet_ntoa(in_broadcast->sin_addr)));
             }
         }
     }
