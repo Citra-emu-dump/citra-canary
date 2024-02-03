@@ -1,3 +1,16 @@
+| Pull Request | Commit | Title | Author | Merged? |
+|----|----|----|----|----|
+| [7372](https://github.com/citra-emu/citra//pull/7372) | [`5a9bb045d`](https://github.com/citra-emu/citra//pull/7372/files) | pica_types: Correctly restrict Float<M, E> precision | [vitor-k](https://github.com/vitor-k/) | Yes |
+| [7384](https://github.com/citra-emu/citra//pull/7384) | [`20ef8e47e`](https://github.com/citra-emu/citra//pull/7384/files) | host_shaders: Remove dependency on shaderSampledImageArrayDynamicIndexing | [GPUCode](https://github.com/GPUCode/) | Yes |
+| [7389](https://github.com/citra-emu/citra//pull/7389) | [`2e671270c`](https://github.com/citra-emu/citra//pull/7389/files) | build: Improve support for Windows cross-compilation. | [Steveice10](https://github.com/Steveice10/) | Yes |
+| [7408](https://github.com/citra-emu/citra//pull/7408) | [`17620f375`](https://github.com/citra-emu/citra//pull/7408/files) | glsl_shader_gen: Increase z=0 epsillon | [GPUCode](https://github.com/GPUCode/) | Yes |
+| [7411](https://github.com/citra-emu/citra//pull/7411) | [`d4b2a1799`](https://github.com/citra-emu/citra//pull/7411/files) | video_core: Use source3 when GPU_PREVIOUS is used in first stage | [GPUCode](https://github.com/GPUCode/) | Yes |
+
+
+End of merge log. You can find the original README.md below the break.
+
+-----
+
 <h1 align="center">
   <br>
   <a href="https://citra-emu.org/"><img src="https://raw.githubusercontent.com/citra-emu/citra-assets/master/Main/citra_logo.svg" alt="Citra" width="200"></a>
