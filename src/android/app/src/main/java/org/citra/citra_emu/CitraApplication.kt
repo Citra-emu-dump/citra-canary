@@ -13,6 +13,7 @@ import org.citra.citra_emu.utils.DirectoryInitialization
 import org.citra.citra_emu.utils.DocumentsTree
 import org.citra.citra_emu.utils.GpuDriverHelper
 import org.citra.citra_emu.utils.PermissionsHandler
+import org.citra.citra_emu.utils.Log
 
 class CitraApplication : Application() {
     private fun createNotificationChannel() {
@@ -53,6 +54,7 @@ class CitraApplication : Application() {
         }
 
         NativeLibrary.logDeviceInfo()
+        Log.logDeviceInfo()
         createNotificationChannel()
     }
 

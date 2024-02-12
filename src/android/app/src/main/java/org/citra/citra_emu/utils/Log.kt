@@ -4,34 +4,29 @@
 
 package org.citra.citra_emu.utils
 
-import android.util.Log
-import org.citra.citra_emu.BuildConfig
+import android.os.Build
 
-/**
- * Contains methods that call through to [android.util.Log], but
- * with the same TAG automatically provided. Also no-ops VERBOSE and DEBUG log
- * levels in release builds.
- */
 object Log {
     // Tracks whether we should share the old log or the current log
     var gameLaunched = false
-    private const val TAG = "Citra Frontend"
 
-    fun verbose(message: String?) {
-        if (BuildConfig.DEBUG) {
-            Log.v(TAG, message!!)
+    external fun debug(message: String)
+
+    external fun warning(message: String)
+
+    external fun info(message: String)
+
+    external fun error(message: String)
+
+    external fun critical(message: String)
+
+    fun logDeviceInfo() {
+        info("Device Manufacturer - ${Build.MANUFACTURER}")
+        info("Device Model - ${Build.MODEL}")
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.R) {
+            info("SoC Manufacturer - ${Build.SOC_MANUFACTURER}")
+            info("SoC Model - ${Build.SOC_MODEL}")
         }
+        info("Total System Memory - ${MemoryUtil.getDeviceRAM()}")
     }
-
-    fun debug(message: String?) {
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, message!!)
-        }
-    }
-
-    fun info(message: String?) = Log.i(TAG, message!!)
-
-    fun warning(message: String?) = Log.w(TAG, message!!)
-
-    fun error(message: String?) = Log.e(TAG, message!!)
 }
