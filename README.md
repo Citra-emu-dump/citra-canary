@@ -1,3 +1,18 @@
+| Pull Request | Commit | Title | Author | Merged? |
+|----|----|----|----|----|
+| [7372](https://github.com/citra-emu/citra//pull/7372) | [`265ed7ec1`](https://github.com/citra-emu/citra//pull/7372/files) | pica_types: Correctly restrict Float<M, E> precision | [vitor-k](https://github.com/vitor-k/) | Yes |
+| [7384](https://github.com/citra-emu/citra//pull/7384) | [`20ef8e47e`](https://github.com/citra-emu/citra//pull/7384/files) | host_shaders: Remove dependency on shaderSampledImageArrayDynamicIndexing | [GPUCode](https://github.com/GPUCode/) | Yes |
+| [7419](https://github.com/citra-emu/citra//pull/7419) | [`19821b2a8`](https://github.com/citra-emu/citra//pull/7419/files) | Port several small multiplayer PRs from yuzu | [FearlessTobi](https://github.com/FearlessTobi/) | Yes |
+| [7420](https://github.com/citra-emu/citra//pull/7420) | [`1d2f9bc7c`](https://github.com/citra-emu/citra//pull/7420/files) | 3dsx: Minor cleanups and add argument support | [GPUCode](https://github.com/GPUCode/) | Yes |
+| [7429](https://github.com/citra-emu/citra//pull/7429) | [`0c9037f07`](https://github.com/citra-emu/citra//pull/7429/files) | renderer_vulkan: Rewrite descriptor set management and various small fixes | [GPUCode](https://github.com/GPUCode/) | Yes |
+| [7431](https://github.com/citra-emu/citra//pull/7431) | [`68e9a68fd`](https://github.com/citra-emu/citra//pull/7431/files) | android: Port yuzu system info logging | [t895](https://github.com/t895/) | Yes |
+| [7432](https://github.com/citra-emu/citra//pull/7432) | [`a2fd9b751`](https://github.com/citra-emu/citra//pull/7432/files) | audio_core\hle\source.cpp: Improve accuracy of SourceStatus | [SachinVin](https://github.com/SachinVin/) | Yes |
+
+
+End of merge log. You can find the original README.md below the break.
+
+-----
+
 <h1 align="center">
   <br>
   <a href="https://citra-emu.org/"><img src="https://raw.githubusercontent.com/citra-emu/citra-assets/master/Main/citra_logo.svg" alt="Citra" width="200"></a>
