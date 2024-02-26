@@ -1,3 +1,17 @@
+| Pull Request | Commit | Title | Author | Merged? |
+|----|----|----|----|----|
+| [7372](https://github.com/citra-emu/citra//pull/7372) | [`265ed7ec1`](https://github.com/citra-emu/citra//pull/7372/files) | pica_types: Correctly restrict Float<M, E> precision | [vitor-k](https://github.com/vitor-k/) | Yes |
+| [7384](https://github.com/citra-emu/citra//pull/7384) | [`20ef8e47e`](https://github.com/citra-emu/citra//pull/7384/files) | host_shaders: Remove dependency on shaderSampledImageArrayDynamicIndexing | [GPUCode](https://github.com/GPUCode/) | Yes |
+| [7420](https://github.com/citra-emu/citra//pull/7420) | [`1d2f9bc7c`](https://github.com/citra-emu/citra//pull/7420/files) | 3dsx: Minor cleanups and add argument support | [GPUCode](https://github.com/GPUCode/) | Yes |
+| [7429](https://github.com/citra-emu/citra//pull/7429) | [`2fe2dd148`](https://github.com/citra-emu/citra//pull/7429/files) | renderer_vulkan: Rewrite descriptor set management and various small fixes | [GPUCode](https://github.com/GPUCode/) | Yes |
+| [7461](https://github.com/citra-emu/citra//pull/7461) | [`4278625d8`](https://github.com/citra-emu/citra//pull/7461/files) | video_core: Remove pre-compilation of Vulkan host-shaders. | [Steveice10](https://github.com/Steveice10/) | Yes |
+| [7463](https://github.com/citra-emu/citra//pull/7463) | [`3e9e9c9e6`](https://github.com/citra-emu/citra//pull/7463/files) | log: fix SOC_U::Accept LOG_DEBUG call, and ensure such mistakes get picked up at compile time | [LiquidFenrir](https://github.com/LiquidFenrir/) | Yes |
+
+
+End of merge log. You can find the original README.md below the break.
+
+-----
+
 <h1 align="center">
   <br>
   <a href="https://citra-emu.org/"><img src="https://raw.githubusercontent.com/citra-emu/citra-assets/master/Main/citra_logo.svg" alt="Citra" width="200"></a>
